@@ -1,6 +1,13 @@
 .post-media-content {
   background-color: burlywood;
-
+  .btn-shared-like {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    &.like {
+      font-weight: bold;
+    }
+  }
   .post-media-content-header {
     display: flex;
     flex-wrap: nowrap;
@@ -133,26 +140,94 @@
           margin-right: 3px;
         }
       }
+    }
+  }
 
-      .btn-shared-like {
-        &.like {
-            font-weight: bold;
+  ///comentarios
+  .post-media-content-comments {
+    padding-left: 15px;
+    padding-right: 15px;
+    .bfc-content-box {
+      display: flex;
+      margin-bottom: 15px;
+      .bfc-content-avatar {
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          display: block;
+          margin-right: 5px;
         }
+      }
+      .bfc-content {
+        font-size: 14px;
+      }
+    }
+  }
+  .post-media-content-comments-box-content {
+    // position: fixed;
+    // bottom: 0;
+    // left: 0;
+    // right: 0;
+    //background: oldlace;
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px;
+    z-index: 12;
+    .content-input-comments {
+      border-radius: 26px;
+      background-color:cadetblue;
+      padding: 15px 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      input {
+        background: transparent;
+        border: 0;
+        flex-grow: 1;
+        padding-left: 25px;
+        &:focus,
+        &:focus-visible {
+          outline: 0;
+        }
+      }
+      button {
+        background-color: transparent;
+        border: 0;
       }
     }
   }
 }
 
 .modal-post-media {
-    position: absolute;
-    z-index: 1000;
-    top: 0;
-    bottom: 0;
-    width: 100%;
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background: red;
+  height: 100%;
+  overflow-y: auto;
+
+  .modal-post-media-btn {
+  }
+  .post-media-content-header {
+    position: fixed;
     background: red;
-    height: 100%;
-    overflow-y: auto;
-    .modal-post-media-btn {
-        
+    top: 0;
+    z-index: 111;
+    padding-bottom: 10px;
+    left: 0;
+    right: 0;
+    .post-media-content-header-content {
+      white-space: nowrap;
+      overflow: hidden;
+      -webkit-line-clamp: 1;
+      text-overflow: ellipsis;
+
+      .post-media-content-header-title {
+      }
     }
+  }
 }

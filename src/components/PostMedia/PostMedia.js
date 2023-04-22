@@ -5,16 +5,19 @@ import HeaderPostMedia from "./components/HeaderPostMedia";
 import ModalPostMedia from "./components/ModalPostMedia";
 import SharedPostMedia from "./components/SharedPostMedia";
 import "./components/style.scss";
+import CommentsPostMedia from "./components/CommentsPostMedia";
 
 const PostMedia = (props) => {
     const { item } = props;
     const [showModal, setShowModal] = useState(false);
+    const [activeInput, setActiveInput] = useState(false);
 
     const onClickLike = () => {
 
     }
-    const onClickComment = () => {
 
+    const onClickComment = () => {
+        setActiveInput(!activeInput);
     }
     const onClickConcierge = () => {
         console.log("action de llamar a concierge")
@@ -33,6 +36,7 @@ const PostMedia = (props) => {
         <DescriptionPostMedia item={item} isLineal onClick={onModal} />
         <ContentPostMediaVideos item={item} onClick={onModal} />
         <SharedPostMedia item={item} onClickLike={onClickLike} onClickComment={onClickComment} onClickConcierge={onClickConcierge} />
+        <CommentsPostMedia comments={item.comments} maxShowComment={2} activeInput={activeInput} returnActiveInput={onClickComment} />
         {showModal && <ModalPostMedia item={item} onClickReturn={onModal} onClickConcierge={onClickConcierge} onClickMoreContent={onClickMoreContent} />}
     </div>);
 }

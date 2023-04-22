@@ -2,6 +2,7 @@ import svgLike from "./images/thumb_up_FILL0_wght200_GRAD0_opsz24.svg";
 import svgComment from "./images/chat_FILL0_wght200_GRAD0_opsz24.svg";
 import svgConcierge from "./images/contact_phone_FILL0_wght200_GRAD0_opsz24.svg";
 import { useState } from "react";
+import ButtonLike from "./ButtonLike";
 const SharedPostMedia = (props) => {
     const [like, setLike] = useState(0);
     const { item } = props;
@@ -11,6 +12,10 @@ const SharedPostMedia = (props) => {
     const onClickConcierge = () => {
         const {onClickConcierge} = props;
         onClickConcierge && onClickConcierge();
+    }
+    const onClickComment = () => {
+        const {onClickComment} = props;
+        onClickComment && onClickComment();
     }
     return (<div className="post-media-content-shared">
         <div className="post-media-content-shared-texts">
@@ -31,11 +36,8 @@ const SharedPostMedia = (props) => {
             <div></div>
         </div>
         <div className="post-media-content-shared-icons">
-            <div onClick={onClickLike} className={`btn-shared-like ${like === 0 ? '' : 'like'}`}>
-                <img src={svgLike} />
-                Me gusta
-            </div>
-            <div>
+            <ButtonLike onClick={onClickLike} />
+            <div onClick={onClickComment}>
                 <img src={svgComment} />
                 Comentarios
             </div>
