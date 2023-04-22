@@ -33,7 +33,8 @@ const PostMedia = (props) => {
 
     return (<div className="post-media-content">
         <HeaderPostMedia item={item} onClick={()=> console.log("abrir perfil/grupo")} />
-        <DescriptionPostMedia item={item} isLineal onClick={onModal} />
+        {(item.description && (item.videos && item.videos.length > 0)) && <DescriptionPostMedia item={item} isLineal onClick={onModal} />}
+        {(item.description && ((item.videos === undefined || item.videos === null || (item.videos && item.videos?.length <= 0)))) && <DescriptionPostMedia item={item} onClick={onModal} />}
         <ContentPostMediaVideos item={item} onClick={onModal} />
         <SharedPostMedia item={item} onClickLike={onClickLike} onClickComment={onClickComment} onClickConcierge={onClickConcierge} />
         <CommentsPostMedia comments={item.comments} maxShowComment={2} activeInput={activeInput} returnActiveInput={onClickComment} />
