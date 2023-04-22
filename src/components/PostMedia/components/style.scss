@@ -1,0 +1,115 @@
+.post-media-content {
+    background-color: burlywood;
+
+  .post-media-content-header {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    padding: 15px;
+    padding-bottom: 0;
+    .post-media-content-header-prev {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      button {
+        border: 0;
+        background-color: transparent;
+        cursor: pointer;
+      }
+    }
+    .post-media-content-header-avatar {
+      padding-right: 15px;
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: block;
+      }
+    }
+    .post-media-content-header-content {
+      .post-media-content-header-title {
+        font-size: 15px;
+        padding-top: 5px;
+        margin: 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .post-media-content-header-publish {
+        margin: 0;
+        font-size: 14px;
+      }
+    }
+  }
+  .post-media-content-description {
+    padding: 15px;
+    padding-top: 5px;
+    padding-bottom: 0;
+    &.inline-description {
+      display: flex;
+
+      .pmcd-star {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 15px;
+      }
+      .pmcd-end {
+        font-size: 14px;
+        white-space: nowrap;
+      }
+    }
+  }
+  .post-media-content-videos {
+    cursor: pointer;
+    padding-top: 5px;
+    gap: 0.5rem;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    display: grid;
+    div:last-child {
+        grid-column: span 2/span 2;
+    }
+
+    div {
+        video {
+            width: 100%;
+            height: initial;
+            display: block;
+        }
+    }
+  }
+  .post-media-content-shared {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    border-top: 2px solid white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    justify-content: space-around;
+
+    .post-media-content-shared-texts {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .post-media-content-shared-icons {
+        display: flex;
+        //border-top: 2px solid white;
+        //padding-top: 10px;
+        //padding-bottom: 10px;
+        justify-content: space-around;
+        div {
+            display: flex;
+            align-items: center;
+            font-size: 13px;
+            img {
+                margin-right: 3px;
+            }
+        }
+    }
+  }
+}
