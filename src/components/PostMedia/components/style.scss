@@ -176,7 +176,7 @@
     z-index: 12;
     .content-input-comments {
       border-radius: 26px;
-      background-color:cadetblue;
+      background-color: cadetblue;
       padding: 15px 0;
       width: 100%;
       display: flex;
@@ -201,7 +201,8 @@
 }
 
 .modal-post-media {
-  position: absolute;
+  position: fixed;
+  overflow: auto;
   z-index: 1000;
   top: 0;
   bottom: 0;
