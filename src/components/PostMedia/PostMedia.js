@@ -8,7 +8,7 @@ import "./components/style.scss";
 import CommentsPostMedia from "./components/CommentsPostMedia";
 
 const PostMedia = (props) => {
-    const { item } = props;
+    const { item, hasButtonAction } = props;
     const [showModal, setShowModal] = useState(false);
     const [activeInput, setActiveInput] = useState(false);
 
@@ -38,8 +38,10 @@ const PostMedia = (props) => {
         <ContentPostMediaVideos item={item} onClick={onModal} />
         <SharedPostMedia item={item} onClickLike={onClickLike} onClickComment={onClickComment} onClickConcierge={onClickConcierge} />
         <CommentsPostMedia comments={item.comments} maxShowComment={2} activeInput={activeInput} returnActiveInput={onClickComment} />
-        {showModal && <ModalPostMedia item={item} onClickReturn={onModal} onClickConcierge={onClickConcierge} onClickMoreContent={onClickMoreContent} />}
+        {showModal && <ModalPostMedia item={item} onClickReturn={onModal} onClickConcierge={onClickConcierge} onClickMoreContent={onClickMoreContent} hasButtonAction={hasButtonAction} />}
     </div>);
 }
-
+PostMedia.defaultProps = {
+    hasButtonAction: false,
+}
 export default PostMedia;

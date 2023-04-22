@@ -6,7 +6,7 @@ import HeaderPostMedia from "./HeaderPostMedia";
 import SharedPostMedia from "./SharedPostMedia";
 
 const ModalPostMedia = (props) => {
-    const {item} = props;
+    const {item, hasButtonAction} = props;
         
     const onModal = () => {
         const {onClickReturn} = props;
@@ -44,7 +44,7 @@ const ModalPostMedia = (props) => {
             )
         })}
         <div>
-            <button className="modal-post-media-btn" onClick={onClickMoreContent}>{`ver más contenido de ${item.name}`}</button>
+            {hasButtonAction && <button className="modal-post-media-btn" onClick={onClickMoreContent}>{`ver más contenido de ${item.name}`}</button>}
         </div>
         {/* <CommentsPostMedia comments={item.comments} /> */}
     </div> );

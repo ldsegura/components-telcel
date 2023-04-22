@@ -13,6 +13,7 @@ export default {
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Primary = {
     args: {
+        hasButtonAction: true,
         item: {
             name: "Grupo Promotora Residencial Hazael Medina",
             "picture": "https://social-network.sicssa-lab.com/assets/images/street-turbo/logo.png",
