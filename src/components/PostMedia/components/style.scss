@@ -1,5 +1,5 @@
 .post-media-content {
-    background-color: burlywood;
+  background-color: burlywood;
 
   .post-media-content-header {
     display: flex;
@@ -66,18 +66,18 @@
     cursor: pointer;
     padding-top: 5px;
     gap: 0.5rem;
-    grid-template-columns: repeat(2,minmax(0,1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     display: grid;
     div:last-child {
-        grid-column: span 2/span 2;
+      grid-column: span 2 / span 2;
     }
 
     div {
-        video {
-            width: 100%;
-            height: initial;
-            display: block;
-        }
+      video {
+        width: 100%;
+        height: initial;
+        display: block;
+      }
     }
   }
   .post-media-content-shared {
@@ -90,26 +90,69 @@
     justify-content: space-around;
 
     .post-media-content-shared-texts {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-left: 8px;
+      padding-right: 8px;
+      padding-bottom: 10px;
+      .post-media-content-shared-texts-content {
+        display: flex;
+        > div {
+          display: flex;
+          img {
+            width: 18px;
+            height: 18px;
+          }
+        }
+      }
+      .likex,
+      .heartx {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        padding-left: 8px;
-        padding-right: 8px;
+        justify-content: center;
+        z-index: 1;
+        img {
+        }
+      }
     }
     .post-media-content-shared-icons {
+      display: flex;
+      border-top: 2px solid white;
+      padding-top: 10px;
+      //padding-bottom: 10px;
+      justify-content: space-around;
+      div {
         display: flex;
-        //border-top: 2px solid white;
-        //padding-top: 10px;
-        //padding-bottom: 10px;
-        justify-content: space-around;
-        div {
-            display: flex;
-            align-items: center;
-            font-size: 13px;
-            img {
-                margin-right: 3px;
-            }
+        align-items: center;
+        font-size: 13px;
+        img {
+          margin-right: 3px;
         }
+      }
+
+      .btn-shared-like {
+        &.like {
+            font-weight: bold;
+        }
+      }
     }
   }
+}
+
+.modal-post-media {
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background: red;
+    height: 100%;
+    overflow-y: auto;
+    .modal-post-media-btn {
+        
+    }
 }
